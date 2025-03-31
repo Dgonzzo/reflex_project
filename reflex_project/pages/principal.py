@@ -1,5 +1,5 @@
 import reflex as rx
-from state import MyState
+from ..state import MyState
 
 def render_student(student:str) -> rx.Component:
     return rx.text(student, size='4', color=MyState.color)

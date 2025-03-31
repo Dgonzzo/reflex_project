@@ -1,18 +1,15 @@
 """Welcome to Reflex! This file outlines the steps to create a basic app."""
 import reflex as rx
 from rxconfig import config
-from components.sidebar import sidebar_bottom_profile
-from pages import center_container
+
+from .components.sidebar import sidebar_bottom_profile
+from .pages.principal import center_container
 
 def index() -> rx.Component:
     # Welcome Page (Index)
     return rx.hstack(
             sidebar_bottom_profile(),
             center_container(),
-            spacing="8",
-            justify="center",
-            align="center",
-            min_height="85vh",
         )
 
 def test() -> rx.Component:
