@@ -4,6 +4,7 @@ from rxconfig import config
 
 from .components.sidebar import sidebar_bottom_profile
 from .pages.principal import center_container
+from .pages.show_product import show_product_page
 
 def index() -> rx.Component:
     # Welcome Page (Index)
@@ -12,18 +13,13 @@ def index() -> rx.Component:
             center_container(),
         )
 
-def test() -> rx.Component:
-    return rx.container(
-        rx.heading("Test Page", size="9"),
-        rx.text("This is a test page.", size="5"),
-        rx.link('Back to main', href='/'),
-
-        spacing="8",
-        justify="center",
-        align="center",
-        min_height="85vh",
+def show_product() -> rx.Component:
+    # Show Products Page
+    return rx.vstack(
+        sidebar_bottom_profile(),
+        show_product_page(),
     )
 
 app = rx.App()
 app.add_page(index)
-app.add_page(test, route='/h')
+app.add_page(show_product, route='show_product')

@@ -29,10 +29,9 @@ def sidebar_item(
 
 def sidebar_items() -> rx.Component:
     return rx.vstack(
-        sidebar_item("Dashboard", "layout-dashboard", "/#"),
-        sidebar_item("Projects", "square-library", "/#"),
-        sidebar_item("Analytics", "bar-chart-4", "/#"),
-        sidebar_item("Messages", "mail", "/#"),
+        sidebar_item("Show products", "book-open-text", "/show_product"),
+        sidebar_item("Add products", "clipboard-pen-line", "/#"),
+        sidebar_item("Delete product", "clipboard-x", "/#"),
         spacing="1",
         width="100%",
     )
