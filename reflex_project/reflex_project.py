@@ -18,21 +18,21 @@ def index() -> rx.Component:
 
 def show_product() -> rx.Component:
     # Show Products Page
-    return rx.vstack(
+    return rx.hstack(
         sidebar_bottom_profile(),
         show_product_page(),
     )
 
 def add_product() -> rx.Component:
     # Add Products Page
-    return rx.vstack(
+    return rx.hstack(
         sidebar_bottom_profile(),
         add_product_page(),
     )
 
 def delete_product() -> rx.Component:
     # Delete Products Page
-    return rx.vstack(
+    return rx.hstack(
         sidebar_bottom_profile(),
         delete_product_page(),
     )

@@ -22,3 +22,10 @@ class MyState(rx.State): # Backend
     @rx.event
     def update_text(self, new_text:str) -> None:
         self.text = new_text
+
+class TableForEachState(rx.State):
+    people: list[list] = [
+        ["Danilo Sousa", "danilo@example.com", "Developer"],
+        ["Zahra Ambessa", "zahra@example.com", "Admin"],
+        ["Jasper Eriks", "jasper@example.com", "Developer"],
+    ]

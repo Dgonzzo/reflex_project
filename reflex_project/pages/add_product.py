@@ -2,7 +2,7 @@ import reflex as rx
 from ..state import MyState
 
 def add_product_page() -> rx.Component:
-    return rx.vstack(
+    return rx.container(
         rx.heading("Add Product", size="9"),
         rx.hstack(
             rx.text("Product Name", size="4"),
