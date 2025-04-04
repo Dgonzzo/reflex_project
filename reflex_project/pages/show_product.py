@@ -1,5 +1,4 @@
 import reflex as rx
-from ..state import MyState, TableForEachState
 
 def show_product_page() -> rx.Component:
     return rx.container(
@@ -7,12 +6,14 @@ def show_product_page() -> rx.Component:
     )
 
 
-def show_person(person: list):
+def show_person(products: list):
     """Show a person in a table row."""
+
+    # ! This is a placeholder for the actual implementation
     return rx.table.row(
-        rx.table.cell(person[0]),
-        rx.table.cell(person[1]),
-        rx.table.cell(person[2]),
+        rx.table.cell(products[0]),
+        rx.table.cell(products[1]),
+        rx.table.cell(products[2]),
     )
 
 
@@ -26,9 +27,9 @@ def foreach_table_example():
             ),
         ),
         rx.table.body(
-            rx.foreach(
-                TableForEachState.people, show_person
-            )
+            # rx.foreach(
+            #     # ! Replace with your data source
+            # )
         ),
         width="100%",
     )

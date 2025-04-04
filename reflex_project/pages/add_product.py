@@ -1,5 +1,4 @@
 import reflex as rx
-from ..state import MyState
 
 def add_product_page() -> rx.Component:
     return rx.container(

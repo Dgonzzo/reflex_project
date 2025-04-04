@@ -1,5 +1,5 @@
 import reflex as rx
-from ..state import MyState
+from ..controllers import PrincipalState
 
 def render_student(student:str) -> rx.Component:
     return rx.text(student, size='4', color=MyState.color)
@@ -14,21 +14,21 @@ def center_container() -> rx.Component:
             rx.heading('Programing subject'),
             rx.link('Test Page', href='/h'),
             rx.input(
-                default_value=MyState.text,
-                on_change=MyState.update_text,
+                default_value=PrincipalState.text,
+                on_change=PrincipalState.update_text,
             ),
 
             rx.hstack(
-                rx.button('Increase 1',size='4', border_radius='80px', on_click=lambda: MyState.increment(1)),
-                rx.button('Increase 30',size='4', border_radius='80px', on_click=lambda: MyState.increment(30)),
-                rx.button('Reset',size='4', border_radius='80px', on_click= MyState.reset_button),
-                rx.text(MyState.count, color=MyState.color, margin='10px', size='6'),
+                rx.button('Increase 1',size='4', border_radius='80px', on_click=lambda: PrincipalState.increment(1)),
+                rx.button('Increase 30',size='4', border_radius='80px', on_click=lambda: PrincipalState.increment(30)),
+                rx.button('Reset',size='4', border_radius='80px', on_click= PrincipalState.reset_button),
+                rx.text(PrincipalState.count, color=PrincipalState.color, margin='10px', size='6'),
                 align='center',
             ),
 
             rx.box(
                 rx.foreach(
-                    MyState.students,
+                    PrincipalState.students,
                     render_student,
                     #lambda student: rx.text(student, size='4', color='green'),
                 )
@@ -36,7 +36,7 @@ def center_container() -> rx.Component:
             
             rx.hstack(
                 rx.cond(
-                    MyState.color == 'red',
+                    PrincipalState.color == 'red',
                     rx.text('Red color'),
                     rx.text('Green color'),
                 ),

@@ -27,7 +27,10 @@ def add_product() -> rx.Component:
     # Add Products Page
     return rx.hstack(
         sidebar_bottom_profile(),
-        add_product_page(),
+        rx.vstack(
+            show_product_page(),
+            add_product_page(),   
+        ),
     )
 
 def delete_product() -> rx.Component:

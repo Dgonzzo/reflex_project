@@ -1,5 +1,7 @@
-from .state import MyState
+from .controllers import PrincipalState
+from .models import Product
 
 __all__ = [
-    "MyState",
+    "PrincipalState",
+    "Product",
 ]
