@@ -2,14 +2,14 @@ import reflex as rx
 from ..controllers import PrincipalState
 
 def render_student(student:str) -> rx.Component:
-    return rx.text(student, size='4', color=MyState.color)
+    return rx.text(student, size='4', color=PrincipalState.color)
 
 def center_container() -> rx.Component:
     return rx.container(
         rx.vstack(
             rx.color_mode.button(position="top-right"),
         rx.vstack(
-            rx.heading("Welcome to " + MyState.text + '!', size="9"),
+            rx.heading("Welcome to " + PrincipalState.text + '!', size="9"),
             rx.heading("A place to learn and have fun with Python!", size="5"),
             rx.heading('Programing subject'),
             rx.link('Test Page', href='/h'),
