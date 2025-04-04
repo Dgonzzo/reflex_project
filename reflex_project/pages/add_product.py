@@ -1,16 +1,34 @@
 import reflex as rx
 
+
+def form_add_product():
+    return rx.vstack(
+        rx.form(
+            rx.vstack(
+                rx.input(
+                    placeholder="Product ID",
+                    name="identificator",
+                ),
+                rx.input(
+                    placeholder="Name",
+                    name="product_name",
+                ),
+                rx.input(
+                    placeholder="Price",
+                    name="product_price",
+                ),
+                rx.button("Submit", type="submit"),
+            ),
+
+            # ! FormState has to be changed
+            on_submit=FormState.handle_submit,
+            reset_on_submit=True,
+        ),
+    )
+
 def add_product_page() -> rx.Component:
     return rx.container(
-        rx.heading("Add Product", size="9"),
-        rx.hstack(
-            rx.text("Product Name", size="4"),
-            rx.text("Product Price", size="4"),
-            rx.text("Product Description", size="4"),
-            spacing="2",
-        ),
-        spacing="8",
-        justify="center",
-        align="center",
-        min_height="85vh",
-    )
+        rx.text("Add Products", size="9"),
+        form_add_product(),
+
+    ),
