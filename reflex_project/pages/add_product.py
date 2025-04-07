@@ -1,5 +1,5 @@
 import reflex as rx
-
+from ..controllers import AddState
 
 def form_add_product():
     return rx.vstack(
@@ -21,7 +21,7 @@ def form_add_product():
             ),
 
             # ! FormState has to be changed
-            on_submit=FormState.handle_submit,
+            on_submit=AddState.handle_submit,
             reset_on_submit=True,
         ),
     )
