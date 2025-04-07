@@ -19,11 +19,11 @@ def form_add_product():
                 ),
                 rx.button("Submit", type="submit"),
             ),
-
-            # ! FormState has to be changed
             on_submit=AddState.handle_submit,
             reset_on_submit=True,
         ),
+        align="center",
+        justify="center",
     )
 
 def add_product_page() -> rx.Component:

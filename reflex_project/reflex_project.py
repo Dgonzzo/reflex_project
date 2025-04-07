@@ -30,6 +30,9 @@ def add_product() -> rx.Component:
         rx.vstack(
             show_product_page(),
             add_product_page(),   
+            justify="center",
+            align="center",
+            width="100%",
         ),
     )
 
