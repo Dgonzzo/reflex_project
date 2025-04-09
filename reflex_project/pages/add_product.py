@@ -28,7 +28,8 @@ def form_add_product():
 
 def add_product_page() -> rx.Component:
     return rx.container(
-        rx.text("Add Products", size="9"),
-        form_add_product(),
-
+        rx.vstack(
+            rx.text("Add Products", size="9"),
+            form_add_product(),  
+        )
     ),

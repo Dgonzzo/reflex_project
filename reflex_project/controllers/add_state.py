@@ -19,4 +19,4 @@ class AddState(rx.State):
             )
             session.commit()
         
-        print(self.form_data)
+        return rx.redirect('/list')
