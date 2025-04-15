@@ -7,6 +7,7 @@ def form_add_product():
             rx.vstack(
                 rx.input(
                     value = ConsultState.get_product.identificator,
+                    on_change=ConsultState.update_code,
                     placeholder="Product ID",
                     name="identificator",
                 ),

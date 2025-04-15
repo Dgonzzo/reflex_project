@@ -9,7 +9,7 @@ from .controllers import ListState
 from .pages.principal import center_container
 from .pages.show_product import consult_page
 from .pages.add_product import add_product_page
-from .pages.delete_product import delete_product_page
+from .pages.delete_product import delete_update_page
 from .pages.list import show_list
 
 def index() -> rx.Component:
@@ -44,7 +44,13 @@ def delete_product() -> rx.Component:
     # Delete Products Page
     return rx.hstack(
         sidebar_bottom_profile(),
-        delete_product_page(),
+        rx.vstack(
+            delete_update_page(),
+            show_list(),   
+            justify="center",
+            align="center",
+            width="100%",
+        )
     )
 
 app = rx.App()

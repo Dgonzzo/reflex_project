@@ -1,17 +1,46 @@
 import reflex as rx
+from ..controllers import UpdateState
 
-def delete_product_page() -> rx.Component:
-    return rx.container(
-        rx.heading("Show Products", size="9"),
-        rx.hstack(
-            rx.text("Product Name", size="4"),
-            rx.text("Product Price", size="4"),
-            rx.text("Product Description", size="4"),
-            spacing="2",
+def form_update_product():
+    return rx.vstack(
+        rx.form(
+            rx.vstack(
+                rx.input(
+                    placeholder="Product ID",
+                    name="identificator",
+                ),
+                rx.input(
+                    placeholder="Name",
+                    name="product_name",
+                ),
+                rx.input(
+                    placeholder="Price",
+                    name="product_price",
+                ),
+                rx.button("Submit", type="submit"),
+            ),
+            on_submit=UpdateState.handle_update,
+            reset_on_submit=True,
         ),
-        spacing="8",
-        justify="center",
         align="center",
-        min_height="85vh",
+        justify="center",
+    )
+
+# def add_product_page() -> rx.Component:
+#     return rx.container(
+#         rx.vstack(
+#             rx.text("Add Products", size="9"),
+#             form_add_product(),  
+#         )
+#     ),
+
+def delete_update_page() -> rx.Component:
+    return rx.container(
+        rx.vstack(
+            rx.text("Delete/Update", size="9"),
+            form_update_product(),
+        ),
+        align="center",
+        justify="center",
     )
   

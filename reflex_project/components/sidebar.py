@@ -32,7 +32,7 @@ def sidebar_items() -> rx.Component:
         sidebar_item("Home", "home", "/"),
         sidebar_item("Show products", "book-open-text", "/show_product"),
         sidebar_item("Add products", "clipboard-pen-line", "/add_product"),
-        sidebar_item("Delete product", "clipboard-x", "/delete_product"),
+        sidebar_item("Update/Delete product", "brush", "/delete_product"),
         spacing="1",
         width="100%",
     )
